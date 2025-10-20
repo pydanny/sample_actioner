@@ -30,7 +30,7 @@ jobs:
         run: |
           mypy fastapi_asyncpg/
           ruff check .
-          ruff format . 
+          ruff format --check . 
 
   # Job to run tests
   tests:
