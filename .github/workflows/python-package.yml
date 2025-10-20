@@ -29,9 +29,8 @@ jobs:
       - name: Run pre-checks
         run: |
           mypy fastapi_asyncpg/
-
-  # ruff check
-  # ruff format          
+          ruff check
+          ruff format          
 
   # Job to run tests
   tests:
