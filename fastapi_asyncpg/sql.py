@@ -4,6 +4,7 @@ helper function to scope sql to postgresql schema
 
 
 async def get(conn, table, condition="1 = 1", args=None, fields="*"):
+    b = 1
     args = args or []
     sql = f"select {fields} from {table} where {condition}"
     return await conn.fetchrow(sql, *args)
@@ -28,8 +29,7 @@ async def insert(conn, table, values):
 
 
 async def update(conn, table, conditions: dict, values: dict):
-    qs = \
-          "update {table} set {columns} where {cond} returning *"
+    qs = "update {table} set {columns} where {cond} returning *"
     counter = 1
     params = []
     cond = []
